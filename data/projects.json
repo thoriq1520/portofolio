@@ -1,0 +1,82 @@
+[
+  {
+    "slug": "new-los",
+    "title": "NEW LOS",
+    "year": "2025-2026",
+    "role": "Quality Assurance",
+    "stack": ["Manual Testing", "Test Cases", "Integration Testing", "SQL Validation"],
+    "summary": "Validated financing workflows and partner integrations across proposal, approval, activation, and monitoring.",
+    "problem": "A financing system with multiple modules and partner integrations needed reliable end-to-end validation before release.",
+    "solution": "Built test cases from business requirements, ran workflow coverage across key modules, and verified integrations with external systems.",
+    "result": "Shipping confidence improved through repeatable manual and integration testing across critical financing flows.",
+    "links": {
+      "caseStudy": "/projects/new-los",
+      "live": null,
+      "github": null
+    }
+  },
+  {
+    "slug": "esuite",
+    "title": "Esuite",
+    "year": "2024-2025",
+    "role": "Backend Developer",
+    "stack": ["Golang", "Hexagonal Architecture", "REST API"],
+    "summary": "Extended backend modules for marketing, finance, sales, and service availability in an existing business platform.",
+    "problem": "Business modules needed ongoing feature delivery and stable maintenance in a large existing application.",
+    "solution": "Implemented new backend capabilities and maintained existing flows in Golang while supporting testing and debugging.",
+    "result": "Delivered features across several operational modules while improving bug identification during testing.",
+    "links": {
+      "caseStudy": "/projects/esuite",
+      "live": null,
+      "github": null
+    }
+  },
+  {
+    "slug": "workshop-management-system",
+    "title": "Workshop Management System",
+    "year": "2023-Present",
+    "role": "Software Developer",
+    "stack": ["React.js", "Next.js", "Material UI", "Formik", "Yup", "Axios"],
+    "summary": "Built inventory-focused workshop features and implemented responsive pages from UI/UX designs.",
+    "problem": "Workshop operations needed inventory-focused product workflows with a usable web interface for automotive use cases.",
+    "solution": "Implemented UI screens in React and Next.js, integrated frontend pages with backend services, and aligned delivery to provided designs.",
+    "result": "Delivered responsive inventory workflows with clean frontend integration for the workshop application.",
+    "links": {
+      "caseStudy": "/projects/workshop-management-system",
+      "live": null,
+      "github": null
+    }
+  },
+  {
+    "slug": "ordering-platform",
+    "title": "Ordering Platform",
+    "year": "2023-Present",
+    "role": "Full Stack Developer",
+    "stack": ["Spring Boot 3", "PostgreSQL", "React.js"],
+    "summary": "Implemented CRUD APIs and responsive interfaces for customer, product, and order management.",
+    "problem": "An ordering platform needed reliable backend APIs, database structure, and a frontend that could support growing order volume.",
+    "solution": "Built CRUD APIs with Spring Boot, configured PostgreSQL structures, and integrated a React frontend with backend services.",
+    "result": "Delivered an end-to-end product foundation for managing customer, product, and order data.",
+    "links": {
+      "caseStudy": "/projects/ordering-platform",
+      "live": null,
+      "github": null
+    }
+  },
+  {
+    "slug": "nobu-link-portal",
+    "title": "NOBU Link & Portal",
+    "year": "2023",
+    "role": "Backend Developer",
+    "stack": ["Java", "Microservices"],
+    "summary": "Maintained and extended payment, notification, and service availability features in a microservice system.",
+    "problem": "Core payment and notification services required feature work and maintenance inside a distributed backend setup.",
+    "solution": "Implemented and maintained Java microservice features across bill payment, notifications, and availability flows.",
+    "result": "Supported stable delivery of core backend features in a production microservice environment.",
+    "links": {
+      "caseStudy": "/projects/nobu-link-portal",
+      "live": null,
+      "github": null
+    }
+  }
+]

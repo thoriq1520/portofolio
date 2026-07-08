@@ -1,0 +1,45 @@
+[
+  {
+    "company": "PT. Sarana Multi Infrastruktur",
+    "role": "Quality Assurance",
+    "period": "Jul 2025 - Jun 2026",
+    "summary": "Performed manual and integration testing for NEW LOS across financing workflows and partner systems.",
+    "details": [
+      "Created and executed test cases from business requirements.",
+      "Validated proposal, approval, activation, and monitoring flows end to end.",
+      "Tested integrations with Refina, Arium, Temenos, ELO, and Orafin."
+    ]
+  },
+  {
+    "company": "PT. Elektronik Distribusi Otomatisasi Terkemuka",
+    "role": "Backend Developer",
+    "period": "Jul 2024 - Jul 2025",
+    "summary": "Built and maintained backend features in Golang with a hexagonal architecture for business-critical modules.",
+    "details": [
+      "Worked on marketing, target management, finance, sales, and service availability modules.",
+      "Maintained existing features and contributed new backend capabilities.",
+      "Provided technical insight during testing to improve bug identification and root cause analysis."
+    ]
+  },
+  {
+    "company": "PT. Padepokan Tujuh Sembilan",
+    "role": "Software Developer",
+    "period": "Aug 2023 - Present",
+    "summary": "Delivered both frontend and full-stack features for workshop and ordering platforms.",
+    "details": [
+      "Built inventory-focused features for a Workshop Management System in the automotive domain.",
+      "Implemented web pages from UI designs using React.js 18 and Next.js.",
+      "Developed CRUD APIs with Spring Boot and integrated responsive React interfaces for an Ordering Platform."
+    ]
+  },
+  {
+    "company": "PT. Infosys Solusi Terpadu",
+    "role": "Backend Developer",
+    "period": "Sep 2023 - Nov 2023",
+    "summary": "Implemented and maintained microservice features for payment and notification flows.",
+    "details": [
+      "Worked on bill payment, notification, and service availability features.",
+      "Maintained Java services in a microservice architecture."
+    ]
+  }
+]

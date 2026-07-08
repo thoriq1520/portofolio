@@ -1,0 +1,22 @@
+[
+  {
+    "category": "Backend",
+    "items": ["Java Spring Boot", "Golang", "Node.js", "Express.js", "NestJS"]
+  },
+  {
+    "category": "Frontend",
+    "items": ["React.js", "Next.js", "Material UI", "Formik", "Yup", "Axios"]
+  },
+  {
+    "category": "Database",
+    "items": ["PostgreSQL", "MySQL", "MongoDB", "Redis"]
+  },
+  {
+    "category": "Quality Assurance",
+    "items": ["Test case design", "Functional testing", "Regression testing", "API testing", "Bug reporting", "SQL validation"]
+  },
+  {
+    "category": "Tools",
+    "items": ["Docker", "Kafka", "Git", "Postman", "CI/CD"]
+  }
+]
