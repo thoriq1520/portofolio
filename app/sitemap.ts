@@ -1,11 +1,10 @@
 import type { MetadataRoute } from "next";
 
-import { projects, siteUrl } from "@/lib/site";
+import { absoluteUrl, projects, siteUrl } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const projectEntries = projects.map((project) => ({
-    url: `${siteUrl}/projects/${project.slug}`,
-    lastModified: new Date(),
+    url: absoluteUrl(`/projects/${project.slug}`),
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }));

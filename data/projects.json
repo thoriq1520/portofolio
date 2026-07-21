@@ -34,7 +34,7 @@
   {
     "slug": "workshop-management-system",
     "title": "Workshop Management System",
-    "year": "2023-Present",
+    "year": "2023-2023",
     "role": "Software Developer",
     "stack": ["React.js", "Next.js", "Material UI", "Formik", "Yup", "Axios"],
     "summary": "Built inventory-focused workshop features and implemented responsive pages from UI/UX designs.",
@@ -50,7 +50,7 @@
   {
     "slug": "ordering-platform",
     "title": "Ordering Platform",
-    "year": "2023-Present",
+    "year": "2023-2023",
     "role": "Full Stack Developer",
     "stack": ["Spring Boot 3", "PostgreSQL", "React.js"],
     "summary": "Implemented CRUD APIs and responsive interfaces for customer, product, and order management.",

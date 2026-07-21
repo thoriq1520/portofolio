@@ -6,6 +6,7 @@ const withMDX = createMDX({
 });
 
 const nextConfig: NextConfig = {
+  distDir: process.env.NODE_ENV === "development" ? ".next-dev" : ".next",
   pageExtensions: ["ts", "tsx", "md", "mdx"],
 };
 

@@ -16,6 +16,7 @@ recovery key
 
 # next.js
 /.next/
+/.next-dev/
 /out/
 
 # production

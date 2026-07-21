@@ -5,7 +5,7 @@ const baseComponents: MDXComponents = {
   a: ({ href = "#", ...props }) => (
     <Link
       href={href}
-      className="text-[var(--accent)] underline underline-offset-4 transition hover:text-white"
+      className="font-medium text-primary underline decoration-primary/40 underline-offset-4 transition-colors hover:text-primary/75"
       {...props}
     />
   ),

@@ -1,9 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { Moon, Sun } from "lucide-react";
+
+import { Button } from "@/components/ui/button";
 
 const STORAGE_KEY = "theme";
-
 type Theme = "light" | "dark";
 
 function applyTheme(theme: Theme) {
@@ -12,11 +14,11 @@ function applyTheme(theme: Theme) {
 }
 
 export function ThemeToggle() {
-  const [theme, setTheme] = useState<Theme>("light");
+  const [theme, setTheme] = useState<Theme>("dark");
 
   useEffect(() => {
     const saved = localStorage.getItem(STORAGE_KEY);
-    const nextTheme: Theme = saved === "dark" ? "dark" : "light";
+    const nextTheme: Theme = saved === "light" ? "light" : "dark";
     setTheme(nextTheme);
     applyTheme(nextTheme);
   }, []);
@@ -27,15 +29,19 @@ export function ThemeToggle() {
     applyTheme(nextTheme);
   }
 
+  const label = `Switch to ${theme === "light" ? "dark" : "light"} theme`;
+
   return (
-    <button
+    <Button
       type="button"
+      variant="outline"
+      size="icon"
       onClick={toggleTheme}
-      aria-label={`Switch to ${theme === "light" ? "dark" : "light"} theme`}
-      className="inline-flex h-10 items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--surface-soft)] px-3 text-sm font-medium text-[var(--foreground)] transition hover:bg-[var(--surface)]"
+      aria-label={label}
+      title={label}
+      className="border-border bg-background/80"
     >
-      <span aria-hidden="true">{theme === "light" ? "☀" : "☾"}</span>
-      <span>{theme === "light" ? "Light" : "Dark"}</span>
-    </button>
+      {theme === "light" ? <Moon aria-hidden="true" /> : <Sun aria-hidden="true" />}
+    </Button>
   );
 }
