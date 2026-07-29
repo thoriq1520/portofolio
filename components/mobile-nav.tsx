@@ -13,15 +13,8 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { navItems } from "@/lib/navigation";
 import { profile } from "@/lib/site";
-
-const navItems = [
-  { label: "About", href: "#about" },
-  { label: "Work", href: "#work" },
-  { label: "Experience", href: "#experience" },
-  { label: "Stack", href: "#skills" },
-  { label: "Contact", href: "#contact" },
-];
 
 export function MobileNav() {
   return (

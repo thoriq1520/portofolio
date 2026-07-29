@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 48" role="img" aria-labelledby="title">
+  <title id="title">TFA monogram</title>
+  <rect x="0.5" y="0.5" width="63" height="47" rx="14" fill="#15171A" stroke="#2B2F36"/>
+  <path fill="#F0F1ED" d="M7 11h17v5h-5.5v22h-6V16H7z"/>
+  <path fill="#F0F1ED" d="M26 11h16v5H32v6h9v5h-9v11h-6z"/>
+  <path fill="#7AA2FF" fill-rule="evenodd" d="M46 11h6l8 27h-5.5L53 32h-8l-1.5 6H38l8-27Zm.4 16h5.2L49 16.5 46.4 27Z"/>
+</svg>

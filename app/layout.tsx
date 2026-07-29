@@ -19,6 +19,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  icons: {
+    icon: [{ url: "/images/tfa-logo.svg", type: "image/svg+xml" }],
+    shortcut: "/images/tfa-logo.svg",
+  },
   keywords: [
     profile.name,
     "Software Engineer",
@@ -94,7 +98,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" data-theme="dark" suppressHydrationWarning>
-      <body>
+      <body suppressHydrationWarning>
         <MotionShell>{children}</MotionShell>
       </body>
     </html>
