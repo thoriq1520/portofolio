@@ -32,7 +32,7 @@ export function MobileNav() {
             variant="outline"
             size="icon"
             aria-label="Open navigation"
-            className="border-border bg-background/80 md:hidden"
+            className="rounded-full border-border bg-background/80 md:hidden"
           />
         }
       >
@@ -44,11 +44,11 @@ export function MobileNav() {
           <SheetTitle className="text-left text-lg font-semibold tracking-tight">
             Thoriq F. Ajiji
           </SheetTitle>
-          <SheetDescription className="text-left">Software Engineer · Bandung</SheetDescription>
+          <SheetDescription className="text-left">Software Engineer</SheetDescription>
         </SheetHeader>
 
         <nav aria-label="Mobile navigation" className="flex flex-1 flex-col px-3 py-4">
-          {navItems.map((item, index) => (
+          {navItems.map((item) => (
             <SheetClose
               key={item.href}
               render={
@@ -59,7 +59,7 @@ export function MobileNav() {
               }
             >
               <span>{item.label}</span>
-              <span className="font-mono text-xs text-muted-foreground">0{index + 1}</span>
+              <ArrowUpRight className="size-4 text-muted-foreground" aria-hidden="true" />
             </SheetClose>
           ))}
         </nav>
@@ -68,9 +68,9 @@ export function MobileNav() {
           <Button
             nativeButton={false}
             render={<a href={`mailto:${profile.email}`} />}
-            className="w-full"
+            className="w-full rounded-full"
           >
-            Start a conversation
+            Email me
             <ArrowUpRight aria-hidden="true" />
           </Button>
         </SheetFooter>

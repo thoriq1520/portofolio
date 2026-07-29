@@ -1,5 +1,21 @@
 [
   {
+    "slug": "ruang-main",
+    "title": "Ruang Main",
+    "year": "2026",
+    "role": "Creator & Full Stack Developer",
+    "stack": ["React", "Vite", "ElysiaJS", "Supabase", "Google OAuth", "Cloudflare"],
+    "summary": "Built and launched a browser mini-game platform with eight playable games, optional accounts, saved progress, and solo rankings.",
+    "problem": "Players needed a lightweight place to enjoy multiple games directly from the browser without a mandatory install or account.",
+    "solution": "Designed and built the React and Vite frontend, ElysiaJS backend, Supabase data layer with Google OAuth sign-in, and Cloudflare deployment with a custom domain.",
+    "result": "Shipped a public production platform with eight browser games and optional account-based saves and rankings.",
+    "links": {
+      "caseStudy": "/projects/ruang-main",
+      "live": "https://ruangmain.web.id/",
+      "github": null
+    }
+  },
+  {
     "slug": "new-los",
     "title": "NEW LOS",
     "year": "2025-2026",
