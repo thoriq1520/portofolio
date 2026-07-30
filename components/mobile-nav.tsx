@@ -16,7 +16,7 @@ import {
 import { navItems } from "@/lib/navigation";
 import { profile } from "@/lib/site";
 
-export function MobileNav() {
+export function MobileNav({ home = false }: { home?: boolean }) {
   return (
     <Sheet>
       <SheetTrigger
@@ -46,7 +46,7 @@ export function MobileNav() {
               key={item.href}
               render={
                 <a
-                  href={item.href}
+                  href={home ? item.href : `/${item.href}`}
                   className="group flex min-h-14 items-center justify-between rounded-xl px-4 text-lg font-medium transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                 />
               }
