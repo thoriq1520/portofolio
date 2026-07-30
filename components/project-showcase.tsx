@@ -1,49 +1,72 @@
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import {
+  ArrowRight,
+  Code2,
+  Gamepad2,
+  Landmark,
+  Server,
+  ShieldCheck,
+  ShoppingCart,
+  Wrench,
+  type LucideIcon,
+} from "lucide-react";
 
-type Project = {
-  slug: string;
-  title: string;
-  summary: string;
-  role: string;
-  year: string;
-  stack: string[];
+import { Button } from "@/components/ui/button";
+import type { Project } from "@/lib/site";
+
+const projectIcons: Record<string, LucideIcon> = {
+  "ruang-main": Gamepad2,
+  "new-los": ShieldCheck,
+  esuite: Server,
+  "workshop-management-system": Wrench,
+  "ordering-platform": ShoppingCart,
+  "nobu-link-portal": Landmark,
 };
 
 export function ProjectShowcase({ projects }: { projects: Project[] }) {
   return (
-    <div className="border-t border-border">
-      {projects.map((project) => (
-        <Link
-          key={project.slug}
-          href={`/projects/${project.slug}`}
-          aria-label={`Read ${project.title} case study`}
-          className="group grid min-h-40 gap-5 border-b border-border py-7 transition-colors duration-200 hover:bg-muted/45 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring sm:px-5 sm:-mx-5 lg:grid-cols-[minmax(0,0.9fr)_minmax(20rem,1.1fr)_auto] lg:items-center"
-        >
-          <div>
-            <p className="text-2xl font-semibold tracking-[-0.04em] sm:text-3xl">
-              {project.title}
-            </p>
-            <p className="mt-2 text-sm text-muted-foreground">
-              {project.role} / {project.year}
-            </p>
-          </div>
+    <div className="divide-y divide-border border-y border-border">
+      {projects.map((project) => {
+        const Icon = projectIcons[project.slug] ?? Code2;
 
-          <div>
-            <p className="max-w-xl text-sm leading-7 text-muted-foreground sm:text-base">
+        return (
+          <article
+            key={project.slug}
+            className="grid items-center gap-6 py-7 sm:px-4 md:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)_auto] md:py-8"
+          >
+            <div className="flex items-center gap-4">
+              <span className="flex h-14 w-16 shrink-0 items-center justify-center rounded-xl border border-border bg-muted text-foreground">
+                <Icon className="size-5" aria-hidden="true" />
+              </span>
+              <div className="min-w-0">
+                <h3 className="text-lg font-semibold tracking-[-0.025em]">{project.title}</h3>
+                <p className="mt-1 text-sm leading-6 text-muted-foreground">
+                  {project.role} / {project.year}
+                </p>
+              </div>
+            </div>
+
+            <p className="max-w-2xl text-lg font-medium leading-7 tracking-[-0.02em] sm:text-xl sm:leading-8">
               {project.summary}
             </p>
-            <p className="mt-3 text-xs leading-6 text-muted-foreground">
-              {project.stack.slice(0, 4).join(", ")}
-            </p>
-          </div>
 
-          <ArrowUpRight
-            className="size-6 text-muted-foreground transition-transform duration-200 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-primary"
-            aria-hidden="true"
-          />
-        </Link>
-      ))}
+            <Button
+              nativeButton={false}
+              variant="outline"
+              render={
+                <Link
+                  href={`/projects/${project.slug}`}
+                  aria-label={`View ${project.title} project`}
+                />
+              }
+              className="w-fit rounded-full md:ml-auto"
+            >
+              View project
+              <ArrowRight aria-hidden="true" />
+            </Button>
+          </article>
+        );
+      })}
     </div>
   );
 }
