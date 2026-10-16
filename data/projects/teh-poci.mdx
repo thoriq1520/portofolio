@@ -1,0 +1,23 @@
+## The project
+
+A finance and inventory application for Teh Poci outlet operations, with development documented from October 2026. This is an outlet-level operations project.
+
+The starting point was three related Excel reports: **Cashflow, Inventory, and Rekap**. Daily sales, expenses, stock movements, and cash records needed to stay connected.
+
+## What I built
+
+- A daily recording workflow for sales, expenses, cash, and balance transfers.
+- Recipe-based inventory usage, connecting product sales to ingredients and packaging.
+- Outlet-specific products, recipes, and inventory, with editing and archiving.
+- Opening balances, monthly carry-forward, historical price and recipe records, and conflict checks.
+- Monitoring and Excel export that preserve the Cashflow, Inventory, and Rekap structure.
+
+## Engineering approach
+
+The frontend uses React, TypeScript, and Vite. A Cloudflare Worker handles the application API, with Supabase and PostgreSQL for persistence. ExcelJS supports workbook reporting.
+
+The application keeps each outlet's data separate and preserves historical records when master data changes. Draft handling and revision checks help protect daily input during editing.
+
+## Outcome
+
+Combined daily finance and inventory recording in one workflow while retaining the reporting structure already used by the outlet. The current implementation focuses on outlet recording and monitoring.

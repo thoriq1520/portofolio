@@ -22,18 +22,18 @@ export function MobileNav({ home = false }: { home?: boolean }) {
       <SheetTrigger
         render={
           <Button
-            variant="outline"
+            variant="ghost"
             size="icon"
             aria-label="Open navigation"
-            className="rounded-full border-border bg-background/80 md:hidden"
+            className="rounded-full md:hidden"
           />
         }
       >
         <Menu aria-hidden="true" />
       </SheetTrigger>
 
-      <SheetContent className="w-[min(88vw,360px)] border-border bg-popover/96 p-0 backdrop-blur-xl">
-        <SheetHeader className="border-b border-border px-6 py-6">
+      <SheetContent className="w-[min(88vw,360px)] border-0 bg-popover p-0">
+        <SheetHeader className="px-6 py-6">
           <SheetTitle className="text-left text-lg font-semibold tracking-tight">
             Thoriq F. Ajiji
           </SheetTitle>
@@ -47,6 +47,7 @@ export function MobileNav({ home = false }: { home?: boolean }) {
               render={
                 <a
                   href={home ? item.href : `/${item.href}`}
+                  aria-label={item.label}
                   className="group flex min-h-14 items-center justify-between rounded-xl px-4 text-lg font-medium transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                 />
               }
@@ -57,10 +58,10 @@ export function MobileNav({ home = false }: { home?: boolean }) {
           ))}
         </nav>
 
-        <SheetFooter className="border-t border-border p-5">
+        <SheetFooter className="p-5">
           <Button
             nativeButton={false}
-            render={<a href={`mailto:${profile.email}`} />}
+            render={<a href={`mailto:${profile.email}`} aria-label="Email me" />}
             className="w-full rounded-full"
           >
             Email me

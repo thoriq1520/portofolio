@@ -1,8 +1,7 @@
 "use client";
 
-import { m, useReducedMotion } from "motion/react";
-
-import { cn } from "@/lib/utils";
+import { useEffect, useRef } from "react";
+import { animate, useInView, useReducedMotion } from "motion/react";
 
 type SectionRevealProps = {
   children: React.ReactNode;
@@ -13,26 +12,20 @@ type SectionRevealProps = {
   amount?: number;
 };
 
-export function SectionReveal({
-  children,
-  className,
-  id,
-  delay = 0,
-  distance = 24,
-  amount = 0.08,
-}: SectionRevealProps) {
+export function SectionReveal({ children, className, id, delay = 0, distance = 72, amount = 0.08 }: SectionRevealProps) {
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { once: true, amount });
   const reducedMotion = useReducedMotion();
 
-  return (
-    <m.div
-      id={id}
-      className={cn(className)}
-      initial={reducedMotion ? false : { opacity: 0, y: distance }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount }}
-      transition={{ duration: 0.42, delay, ease: "easeOut" }}
-    >
-      {children}
-    </m.div>
-  );
+  useEffect(() => {
+    if (!inView || reducedMotion || !ref.current) return;
+    const travel = matchMedia("(max-width: 767px)").matches ? Math.min(distance, 48) : distance;
+    // ponytail: animate after entry; server HTML stays visible without JavaScript.
+    const animation = animate(ref.current, { opacity: [0, 1], y: [travel, 0] }, {
+      duration: 0.85, delay, ease: [0.16, 1, 0.3, 1],
+    });
+    return () => animation.complete();
+  }, [inView, reducedMotion, delay, distance]);
+
+  return <div ref={ref} id={id} className={className}>{children}</div>;
 }

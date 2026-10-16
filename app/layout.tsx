@@ -84,11 +84,8 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  colorScheme: "dark light",
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f4f3ef" },
-    { media: "(prefers-color-scheme: dark)", color: "#0b0d10" },
-  ],
+  colorScheme: "light dark",
+  themeColor: "#f3f3f3",
 };
 
 export default function RootLayout({
@@ -97,8 +94,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" data-theme="dark" suppressHydrationWarning>
-      <body suppressHydrationWarning>
+    <html lang="en" data-theme="light" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: `try{var t=localStorage.getItem('theme')==='dark'?'dark':'light';document.documentElement.dataset.theme=t;document.documentElement.style.colorScheme=t}catch{}` }} />
+      </head>
+      <body>
         <MotionShell>{children}</MotionShell>
       </body>
     </html>

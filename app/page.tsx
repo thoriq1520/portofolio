@@ -74,8 +74,8 @@ export default function Home() {
 
       <div id="content">
         <HeroSection />
-        <AboutSection />
         <WorkSection />
+        <AboutSection />
         <ExperienceSection />
         <SkillsSection />
         <ContactSection />

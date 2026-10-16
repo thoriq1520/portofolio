@@ -1,22 +1,53 @@
 [
   {
     "category": "Backend",
-    "items": ["Java Spring Boot", "Golang", "Node.js", "Express.js", "NestJS"]
+    "items": [
+      "Java / Spring Boot",
+      "Golang",
+      "Node.js",
+      "Strapi",
+      "REST APIs"
+    ]
   },
   {
     "category": "Frontend",
-    "items": ["React.js", "Next.js", "Material UI", "Formik", "Yup", "Axios"]
+    "items": [
+      "TypeScript",
+      "React",
+      "Next.js",
+      "Vite",
+      "Tailwind CSS"
+    ]
   },
   {
     "category": "Database",
-    "items": ["PostgreSQL", "MySQL", "MongoDB", "Redis"]
+    "items": [
+      "PostgreSQL",
+      "MySQL",
+      "MongoDB",
+      "Redis",
+      "Supabase"
+    ]
   },
   {
     "category": "Quality Assurance",
-    "items": ["Test case design", "Functional testing", "Regression testing", "API testing", "Bug reporting", "SQL validation"]
+    "items": [
+      "Test case design",
+      "Functional testing",
+      "Regression testing",
+      "API testing",
+      "Bug reporting",
+      "SQL validation"
+    ]
   },
   {
     "category": "Tools",
-    "items": ["Docker", "Kafka", "Git", "Postman", "CI/CD"]
+    "items": [
+      "Docker",
+      "Cloudflare",
+      "Git",
+      "Postman",
+      "CI/CD"
+    ]
   }
 ]

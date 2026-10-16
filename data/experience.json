@@ -1,5 +1,27 @@
 [
   {
+    "company": "AMC Racing",
+    "role": "Full Stack Developer",
+    "engagement": "Contract",
+    "period": "16 Sep - 25 Dec 2026",
+    "summary": "Developing the customer storefront and backend workflows for a motorcycle-accessories business.",
+    "details": [
+      "Storefront, checkout, payment and shipping integrations.",
+      "Order management, product reviews, returns, and store administration."
+    ]
+  },
+  {
+    "company": "Yada Technology",
+    "role": "Fullstack Developer",
+    "engagement": "Freelance",
+    "period": "15 Sep - 25 Oct 2026",
+    "summary": "Technical Support for RailDataHub Platform, contributing to an existing development team.",
+    "details": [
+      "Frontend and backend improvements for data and administrative workflows.",
+      "API integration, debugging, testing, and code documentation."
+    ]
+  },
+  {
     "company": "PT. Sarana Multi Infrastruktur",
     "role": "Quality Assurance",
     "period": "Jul 2025 - Jun 2026",
@@ -8,7 +30,8 @@
       "Created and executed test cases from business requirements.",
       "Validated proposal, approval, activation, and monitoring flows end to end.",
       "Tested integrations with Refina, Arium, Temenos, ELO, and Orafin."
-    ]
+    ],
+    "engagement": "Professional experience"
   },
   {
     "company": "PT. Elektronik Distribusi Otomatisasi Terkemuka",
@@ -19,18 +42,20 @@
       "Worked on marketing, target management, finance, sales, and service availability modules.",
       "Maintained existing features and contributed new backend capabilities.",
       "Provided technical insight during testing to improve bug identification and root cause analysis."
-    ]
+    ],
+    "engagement": "Professional experience"
   },
   {
     "company": "PT. Padepokan Tujuh Sembilan",
     "role": "Software Developer",
-    "period": "Aug 2023 - Present",
+    "period": "Aug 2023 - Sep 2026",
     "summary": "Delivered both frontend and full-stack features for workshop and ordering platforms.",
     "details": [
       "Built inventory-focused features for a Workshop Management System in the automotive domain.",
       "Implemented web pages from UI designs using React.js 18 and Next.js.",
       "Developed CRUD APIs with Spring Boot and integrated responsive React interfaces for an Ordering Platform."
-    ]
+    ],
+    "engagement": "Professional experience"
   },
   {
     "company": "PT. Infosys Solusi Terpadu",
@@ -40,6 +65,7 @@
     "details": [
       "Worked on bill payment, notification, and service availability features.",
       "Maintained Java services in a microservice architecture."
-    ]
+    ],
+    "engagement": "Professional experience"
   }
 ]

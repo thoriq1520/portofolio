@@ -11,6 +11,9 @@ import { ProjectOverview } from "@/components/projects/project-overview";
 import { absoluteUrl, getProject, ogImage, profile, projects, siteName, siteUrl } from "@/lib/site";
 
 const projectPages = {
+  "amc-racing": () => import("@/data/projects/amc-racing.mdx"),
+  "teh-poci": () => import("@/data/projects/teh-poci.mdx"),
+  datahub: () => import("@/data/projects/datahub.mdx"),
   "ruang-main": () => import("@/data/projects/ruang-main.mdx"),
   "new-los": () => import("@/data/projects/new-los.mdx"),
   esuite: () => import("@/data/projects/esuite.mdx"),
@@ -103,7 +106,7 @@ export default async function ProjectPage({ params }: PageProps) {
   const nextProject = projects[(projectIndex + 1) % projects.length];
 
   return (
-    <main className="min-h-dvh bg-background text-foreground">
+    <main id="top" className="min-h-dvh bg-background text-foreground">
       <JsonLd data={projectJsonLd} />
       <a
         href="#project-content"
@@ -114,7 +117,7 @@ export default async function ProjectPage({ params }: PageProps) {
 
       <ProjectHeader />
 
-      <div id="project-content" className="mx-auto w-full max-w-[1180px] px-4 pb-10 pt-16 sm:px-6 sm:pt-20 lg:px-10 lg:pt-24">
+      <div id="project-content" className="case-study">
         <ProjectOverview project={project} />
         <ProjectCover project={project} />
         <ProjectDetails project={project}>

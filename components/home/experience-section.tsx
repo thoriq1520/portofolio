@@ -3,30 +3,18 @@ import { experience } from "@/lib/site";
 
 export function ExperienceSection() {
   return (
-    <SectionReveal id="experience" className="mx-auto w-full max-w-[1280px] px-4 py-24 sm:px-6 sm:py-28 lg:px-10 lg:py-36">
-      <div className="grid gap-12 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20">
-        <div className="lg:sticky lg:top-28 lg:self-start">
-          <h2 className="section-title">Across build, integration, and validation.</h2>
-          <p className="mt-6 max-w-md text-base leading-8 text-muted-foreground">
-            Experience across implementation, maintenance, integration, and critical-path testing.
-          </p>
-        </div>
-        <div className="border-t border-border">
-          {experience.map((item) => (
-            <article key={`${item.company}-${item.role}`} className="border-b border-border py-9 sm:py-11">
-              <div className="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between sm:gap-8">
-                <h3 className="text-2xl font-semibold tracking-[-0.035em]">{item.role}</h3>
-                <p className="shrink-0 text-sm text-muted-foreground">{item.period}</p>
-              </div>
-              <p className="mt-2 text-sm font-medium text-primary">{item.company}</p>
-              <p className="mt-5 max-w-2xl text-base leading-8 text-muted-foreground">{item.summary}</p>
-              <ul className="mt-6 grid gap-3 text-sm leading-7 text-muted-foreground sm:grid-cols-2">
-                {item.details.map((detail) => <li key={detail} className="pr-5">{detail}</li>)}
-              </ul>
+    <section id="experience" className="experience-section page-shell section-space">
+      <SectionReveal className="section-heading"><h2>Experience</h2><p>Teams, assignments, and the work in between.</p></SectionReveal>
+      <div className="experience-list">
+        {experience.map(item => (
+          <SectionReveal key={`${item.company}-${item.role}`} distance={80}>
+            <article className="experience-item">
+              <div className="experience-company"><h3>{item.company}</h3><p>{item.role} · {item.engagement}</p><p className="experience-period">{item.period}</p></div>
+              <div className="experience-description"><p>{item.summary}</p><ul>{item.details.map(detail => <li key={detail}>{detail}</li>)}</ul></div>
             </article>
-          ))}
-        </div>
+          </SectionReveal>
+        ))}
       </div>
-    </SectionReveal>
+    </section>
   );
 }
