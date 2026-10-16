@@ -49,6 +49,8 @@ pnpm preview
 
 Cloudflare Workers deployment uses OpenNext and `wrangler.jsonc`. `pnpm deploy` publishes the site; use it only when ready to release. A successful Next.js build alone does not verify the Cloudflare deployment.
 
+The Worker name is `portofolio`, matching the connected Cloudflare Builds project. `workers_dev` is explicitly enabled so the public `*.workers.dev` address remains available.
+
 ## Visual assets
 
 The portrait and Ruang Main screenshot were already part of this portfolio. `amc-racing.webp` is a motorcycle visual reused from the AMC Racing storefront assets; `teh-poci.png` is the outlet brand mark reused from the finance application's assets. Neither is presented as a screenshot of the application. The RailDataHub panel is typography, with no private interface or client data.
