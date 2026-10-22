@@ -2,6 +2,7 @@ import { AboutSection } from "@/components/home/about-section";
 import { ContactSection } from "@/components/home/contact-section";
 import { ExperienceSection } from "@/components/home/experience-section";
 import { HeroSection } from "@/components/home/hero-section";
+import { HomeParticles } from "@/components/home/home-particles";
 import { SkillsSection } from "@/components/home/skills-section";
 import { WorkSection } from "@/components/home/work-section";
 import { JsonLd } from "@/components/json-ld";
@@ -73,11 +74,14 @@ export default function Home() {
       <HomeHeader />
 
       <div id="content">
-        <HeroSection />
-        <WorkSection />
-        <AboutSection />
-        <ExperienceSection />
-        <SkillsSection />
+        <div className="home-particle-region">
+          <HomeParticles />
+          <HeroSection />
+          <WorkSection />
+          <AboutSection />
+          <ExperienceSection />
+          <SkillsSection />
+        </div>
         <ContactSection />
       </div>
     </main>

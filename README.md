@@ -55,4 +55,15 @@ The Worker name is `portofolio`, matching the connected Cloudflare Builds projec
 
 The portrait and Ruang Main screenshot were already part of this portfolio. `amc-racing.webp` is a motorcycle visual reused from the AMC Racing storefront assets; `teh-poci.png` is the outlet brand mark reused from the finance application's assets. Neither is presented as a screenshot of the application. The RailDataHub panel is typography, with no private interface or client data.
 
-Motion uses native scrolling, CSS, and the existing Motion package. Main content is rendered visibly on the server, and reduced-motion visitors receive the static composition.
+Motion uses native scrolling, CSS, and the existing Motion package. Main content is rendered visibly on the server.
+
+The hero follows the local `example/morph-particles` reference: large text on the left, a blue particle portrait on the right, and a field of small particles in depth inspired by “Challenge 006”. The hero and navigation follow the selected light/dark theme. Soft blue point sprites use normal blending on light backgrounds and the reference's additive blending on dark backgrounds. The supplied faceless image at `public/images/particle-portrait-source.jpg` is sampled onto a smooth oval relief without reconstructing facial features.
+
+Native scroll progress drives a reversible morph from the portrait to a seeded random volume. The hero stage stays in view while its particles scatter; scrolling back reassembles the same points. The text recedes during the transition. The same canvas stays as a subtle overlay across the homepage's work, about, experience, and skills sections, fading to 32% opacity over the content. Its containing region clips the effect before the contact/footer section. It does not intercept clicks, and detail routes do not mount it. Particles keep a slow independent drift, and the mouse adds a gentle tilt without radial repulsion. The first frame is already formed, with a blue SVG preview while WebGL loads. Touch preserves vertical scrolling. The renderer pauses outside its homepage region and in hidden tabs; reduced motion uses a still portrait followed by a still scattered field. The SVG remains visible if JavaScript, portrait data, or WebGL is unavailable.
+
+After changing the portrait source or its crop/depth settings in `scripts/prepare-portrait.mjs`, regenerate and check the committed particle assets:
+
+```sh
+pnpm prepare:portrait
+pnpm check:portrait
+```

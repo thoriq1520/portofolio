@@ -34,7 +34,6 @@
   --text-statement: clamp(1.25rem, 2vw, 1.5rem);
   --text-title: clamp(2rem, 3.5vw, 3rem);
   --text-poster: clamp(2.5rem, 6vw, 7rem);
-  --text-monument: clamp(6rem, 29vw, 26rem);
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -124,33 +123,23 @@ h2, h3 { line-height: 1.1; }
 .desktop-navigation a:hover { color: var(--primary); }
 .header-actions { gap: 8px; }
 
-.hero { min-height: min(880px, calc(100svh - 64px)); display: flex; flex-direction: column; justify-content: space-between; padding-top: 64px; padding-bottom: 24px; }
-.hero-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 32px; }
-.hero-introduction { max-width: 29rem; animation: hero-details 1s var(--ease-out) 150ms both; }
-.hero-introduction > p { font-size: var(--text-statement); line-height: 1.5; }
-.hero-location { text-align: right; font-size: var(--text-small); animation: hero-details 1s var(--ease-out) 250ms both; }
+.home-particle-region { position: relative; display: flow-root; isolation: isolate; overflow: clip; margin-top: -64px; }
+.home-particles { position: sticky; top: 0; z-index: 10; height: 100svh; margin-bottom: -100svh; pointer-events: none; }
+.hero { position: relative; height: 180svh; background: var(--background); color: var(--foreground); --hero-progress: 0; }
+.hero-stage { position: sticky; top: 0; height: 100svh; min-height: 560px; overflow: clip; isolation: isolate; }
+.hero-copy { position: relative; z-index: 1; display: flex; align-items: center; height: 100%; padding-inline: 10%; pointer-events: none; opacity: calc(1 - var(--hero-progress) * 1.7); transform: translate3d(0, calc(var(--hero-progress) * -70px), 0); }
+.hero-copy h1 { font-family: Arial, Helvetica, sans-serif; font-size: clamp(4rem, 7.5vw, 9rem); font-weight: 700; letter-spacing: -0.045em; line-height: 0.98; text-transform: uppercase; pointer-events: auto; }
+.hero-copy h1 span { display: block; }
 .action-link { display: inline-flex; align-items: center; gap: 24px; min-height: 52px; margin-top: 28px; padding: 12px 22px; border-radius: 999px; background: var(--primary); color: var(--primary-foreground); font-size: var(--text-small); font-weight: 600; transition: transform 200ms var(--ease-out); }
 .action-link svg { width: 20px; height: 20px; transition: transform 200ms var(--ease-out); }
 .action-link:hover svg { transform: translate(3px, 3px); }
 .action-link:active { transform: scale(0.97); }
-.hero-title { margin-top: 32px; font-size: var(--text-monument); line-height: 0.92; letter-spacing: -0.075em; font-weight: 720; white-space: nowrap; }
-.hero-name-scene { display: block; perspective: 1600px; }
-.hero-name { display: inline-block; transform-style: preserve-3d; transform: rotateX(calc(8deg + var(--pointer-x, 0deg))) rotateY(calc(-6deg + var(--pointer-y, 0deg))); transition: transform 450ms var(--ease-out); }
-.hero-letter {
-  display: inline-block;
-  transform-origin: 50% 70%;
-  /* The sharp blue layers form the sides of the requested 3D lettering. */
-  text-shadow: 0.002em 0.003em 0 var(--primary), 0.004em 0.006em 0 var(--primary), 0.006em 0.009em 0 var(--primary), 0.008em 0.012em 0 var(--primary), 0.010em 0.015em 0 var(--primary), 0.012em 0.018em 0 var(--primary), 0.014em 0.021em 0 var(--primary), 0.016em 0.024em 0 var(--primary);
-  animation: hero-letter-arrive 1.4s var(--ease-out) both;
-}
-.hero-bottom .action-link { margin-top: 0; }
-.hero-bottom { display: flex; align-items: end; justify-content: space-between; gap: 24px; font-size: var(--text-small); padding-top: 24px; }
-@keyframes hero-letter-arrive {
-  0% { opacity: 0; transform: translate3d(0, 0.65em, -320px) rotateX(-85deg) rotateY(-30deg); }
-  65% { opacity: 1; transform: translate3d(0, -0.035em, 32px) rotateX(8deg) rotateY(3deg); }
-  100% { opacity: 1; transform: translate3d(0, 0, 0) rotateX(0) rotateY(0); }
-}
-@keyframes hero-details { from { transform: translateY(40px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+.hero-portrait { position: absolute; inset: 0; }
+.hero-portrait-fallback { position: absolute; inset: 0 0 0 50%; overflow: clip; background: url("/images/portrait-particles.svg") center / auto 100% no-repeat; opacity: 1; transition: opacity 180ms ease; }
+.hero-particle-canvas { position: absolute; inset: 0; overflow: clip; touch-action: pan-y; }
+.hero-particle-canvas canvas { display: block; width: 100%; height: 100%; opacity: 0; transition: opacity 180ms ease; }
+.hero-particle-canvas[data-ready="true"] canvas { opacity: 1; }
+.home-particle-region:has(.hero-particle-canvas[data-ready="true"]) .hero-portrait-fallback { opacity: 0; visibility: hidden; transition: opacity 180ms ease, visibility 0s 180ms; }
 
 .project-feature { display: grid; grid-template-columns: 0.85fr 1.15fr; align-items: center; gap: 8%; min-height: 680px; padding-block: 64px; }
 .project-copy h3 { font-size: var(--text-title); margin-bottom: 24px; }
@@ -261,15 +250,9 @@ h2, h3 { line-height: 1.1; }
   .section-space { padding-block: 80px; }
   .header-inner { height: 72px; gap: 12px; }
   .desktop-navigation { display: none; }
-  .hero { min-height: min(720px, calc(100svh - 64px)); padding-top: 48px; padding-bottom: 16px; }
-  .hero-top { display: block; }
-  .hero-introduction { max-width: 22rem; }
-  .hero-introduction > p { font-size: 1.25rem; }
-  .hero-location { display: none; }
-  .hero-title { font-size: 29vw; margin-top: 48px; }
-  .hero-name-scene { perspective: 800px; }
-  .hero-bottom { align-items: start; flex-direction: column; gap: 24px; }
-  .hero-bottom p:last-child { color: var(--muted-foreground); }
+  .hero-copy { align-items: flex-start; padding: 132px 24px 0; }
+  .hero-copy h1 { font-size: clamp(3rem, 11.6vw, 5.5rem); line-height: 1; }
+  .hero-portrait-fallback { inset: 28% 0 0; height: 72%; }
   .section-heading { display: block; margin-bottom: 32px; }
   .section-heading p { margin-top: 20px; }
   .project-feature { display: flex; flex-direction: column-reverse; align-items: stretch; gap: 32px; min-height: 0; padding-block: 36px; }
@@ -306,10 +289,10 @@ h2, h3 { line-height: 1.1; }
   .next-project { margin-block: 64px 40px; }
 }
 @media (max-height: 500px) and (min-width: 600px) {
-  .hero { min-height: 650px; }
+  .hero-stage { min-height: 100svh; }
 }
 @media (prefers-reduced-motion: reduce) {
+  .hero { height: 100svh; min-height: 560px; }
   html { scroll-behavior: auto; }
-  .hero-name, .hero-letter { transform: none; animation: none; transition: none; }
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; animation-delay: 0ms !important; animation-iteration-count: 1 !important; }
 }
