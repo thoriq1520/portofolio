@@ -49,6 +49,8 @@ pnpm preview
 
 Cloudflare Workers deployment uses OpenNext and `wrangler.jsonc`. `pnpm deploy` publishes the site; use it only when ready to release. A successful Next.js build alone does not verify the Cloudflare deployment.
 
+Use Next.js 15.5.28 or newer within the supported Next.js 15 line, OpenNext 1.20.13 or newer, and Wrangler 4.148.0 or newer. OpenNext 1.20.13 fixes the incorrect rejection of supported Next.js 15 releases after October 21, 2026. Use `pnpm build:cloudflare` to verify the complete Worker build without publishing.
+
 The Worker name is `portofolio`, matching the connected Cloudflare Builds project. `workers_dev` is explicitly enabled so the public `*.workers.dev` address remains available.
 
 ## Visual assets
